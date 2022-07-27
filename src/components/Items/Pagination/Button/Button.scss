@@ -1,0 +1,19 @@
+.button {
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 10px 10px 5px -5px rgba(30, 129, 204, 0.2);  
+  transition: all .3s ease;
+  cursor: pointer;
+
+  &_active {
+    background: blue;
+    color: #fff;
+  }
+
+  &:hover {
+    border: 3px blue solid;
+  }
+}
