@@ -2,7 +2,11 @@ import React from 'react';
 import Button from './Button/Button';
 import './Pagination.scss';
 
-function Pagination({ currentPage, setCurrentPage, paginationActive }) {
+function Pagination({ 
+  currentPage,
+  setCurrentPage,
+  paginationActive 
+}) {
 
   const pages = [1, 2, 3, 4];
 

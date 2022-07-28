@@ -1,51 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Input.scss';
-import { api } from '../../utils/Api';
 
-function Input({ setBeerArray, setPaginationActive }) {
-
-  const [inputValue, setIsInputValue] = useState('')
+function Input({ inputValue, setIsInputValue, handleSearch }) {
 
   const handleChangeInput = (e) => {
     setIsInputValue(e.target.value);
-  }
-
-  const handleSubmitSearch = (e) => {
-    e.preventDefault();
-    inputValue ?
-      api
-        .getBeerByName(inputValue)
-        .then(res => setBeerArray(res))
-        .catch((e) => console.log(e))
-        .finally(() => setPaginationActive(false))
-      :
-      api
-        .getBeer(1)
-        .then(res => setBeerArray(res))
-        .catch((e) => console.log(e))
-        .finally(() => setPaginationActive(true))
-  }
-
-  const handleClickSearch = (e) => {
-    inputValue ?
-    api
-      .getBeerByName(inputValue)
-      .then(res => setBeerArray(res))
-      .catch((e) => console.log(e))
-      .finally(() => setPaginationActive(false))
-    :
-    api
-      .getBeer(1)
-      .then(res => setBeerArray(res))
-      .catch((e) => console.log(e))
-      .finally(() => setPaginationActive(true))
   }
 
   return (
     <form
       className="form"
       name="search"
-      onSubmit={handleSubmitSearch}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSearch();
+      }}
     >
       <input
         className="input"
@@ -55,7 +24,7 @@ function Input({ setBeerArray, setPaginationActive }) {
       ></input>
       <button 
         className="button-search"
-        onClick={handleClickSearch}
+        onClick={handleSearch}
       ></button>
     </form>
   );
