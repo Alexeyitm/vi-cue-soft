@@ -3,7 +3,7 @@ import './Items.scss';
 import Card from './Card/Card';
 import Pagination from './Pagination/Pagination';
 
-function Items({ cards, currentPage, setCurrentPage }) {
+function Items({ cards, currentPage, setCurrentPage, paginationActive }) {
 
   return (
     <div className="items">
@@ -20,6 +20,7 @@ function Items({ cards, currentPage, setCurrentPage }) {
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        paginationActive={paginationActive}
       />
     </div>
   );

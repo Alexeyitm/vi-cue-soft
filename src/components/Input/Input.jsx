@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Input.scss';
 import { api } from '../../utils/Api';
 
-function Input() {
+function Input({ setBeerArray, setPaginationActive }) {
 
   const [inputValue, setIsInputValue] = useState('')
 
@@ -12,8 +12,18 @@ function Input() {
 
   const handleSubmitSearch = (e) => {
     e.preventDefault();
-    console.log(inputValue);
-    api.getBeerByName(inputValue).then(res => console.log(res))
+    inputValue ?
+      api
+        .getBeerByName(inputValue)
+        .then(res => setBeerArray(res))
+        .catch((e) => console.log(e))
+        .finally(() => setPaginationActive(false))
+      :
+      api
+        .getBeer(1)
+        .then(res => setBeerArray(res))
+        .catch((e) => console.log(e))
+        .finally(() => setPaginationActive(true))
   }
 
   return (

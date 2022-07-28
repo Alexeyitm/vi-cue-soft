@@ -29,7 +29,7 @@ class Api {
   
   // Получаем карточки пива по названию
   getBeerByName(name) {
-    return fetch(`${this._baseUrl}/beers?beer_name=${name}`, {
+    return fetch(`${this._baseUrl}/beers?beer_name=${name}&per_page=80`, {
       method: 'GET',
     })
     .then(res => this._getJSON(res))

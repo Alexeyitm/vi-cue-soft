@@ -9,6 +9,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [beerArray, setBeerArray] = useState([]);
 
+  const [paginationActive, setPaginationActive] = useState(true);
+
   useEffect(() => {
     setBeerArray(
       api
@@ -20,11 +22,15 @@ function App() {
 
   return (
     <div className="app">
-      <Input/>
+      <Input
+        setBeerArray={setBeerArray}
+        setPaginationActive={setPaginationActive}
+      />
       <Items
         cards={beerArray}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        paginationActive={paginationActive}
       />
     </div>
   );
