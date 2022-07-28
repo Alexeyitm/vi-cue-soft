@@ -26,6 +26,21 @@ function Input({ setBeerArray, setPaginationActive }) {
         .finally(() => setPaginationActive(true))
   }
 
+  const handleClickSearch = (e) => {
+    inputValue ?
+    api
+      .getBeerByName(inputValue)
+      .then(res => setBeerArray(res))
+      .catch((e) => console.log(e))
+      .finally(() => setPaginationActive(false))
+    :
+    api
+      .getBeer(1)
+      .then(res => setBeerArray(res))
+      .catch((e) => console.log(e))
+      .finally(() => setPaginationActive(true))
+  }
+
   return (
     <form
       className="form"
@@ -38,6 +53,10 @@ function Input({ setBeerArray, setPaginationActive }) {
         placeholder="Enter the name of the beer"
         onChange={handleChangeInput}
       ></input>
+      <button 
+        className="button-search"
+        onClick={handleClickSearch}
+      ></button>
     </form>
   );
 }

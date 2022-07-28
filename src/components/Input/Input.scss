@@ -1,3 +1,7 @@
+.form {
+  position: relative;
+}
+
 .input {
   width: 60%;
   display: block;
@@ -5,4 +9,18 @@
   padding: 20px;
   border: 0;
   border-radius: 10px;
+}
+
+.button-search {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: inherit;
+  background: url('../../images/search.svg') no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: 20%;
+  bottom: 10px;
+  cursor: pointer;
 }
