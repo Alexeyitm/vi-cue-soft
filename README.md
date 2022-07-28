@@ -39,3 +39,4 @@
 ## Посмотреть приложение:
 
 * [Test task for ViCueSoft на GitHub Pages](https://alexeyitm.github.io/vi-cue-soft/)
+* [Архитектура Test task for ViCueSoft на Google Slides](https://docs.google.com/presentation/d/1hVGvNX1hTn6g2UF7f7UQFDuoNAsMsTGPDHShLLqFkS4/edit#slide=id.p/)
