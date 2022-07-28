@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.scss';
 
-function Input({ inputValue, setIsInputValue, handleSearch }) {
+function Input({ setIsInputValue, handleSearch }) {
 
   const handleChangeInput = (e) => {
     setIsInputValue(e.target.value);

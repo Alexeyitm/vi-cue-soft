@@ -9,7 +9,8 @@ function Items({
   currentPage,
   setCurrentPage,
   paginationActive,
-  beerNotFound 
+  beerNotFound,
+  setIsScroll
 }) {
 
   return (
@@ -21,6 +22,7 @@ function Items({
             <Card 
               key={card.id} 
               card={card}
+              setIsScroll={setIsScroll}
             />
           )
       }

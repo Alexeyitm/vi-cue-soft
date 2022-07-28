@@ -1,7 +1,12 @@
 import React from 'react';
 import './Page.scss';
 
-function Page({ card, isOpenPage, setIsOpenPage, setIsScroll }) {
+function Page({ 
+  card,
+  isOpenPage,
+  setIsOpenPage,
+  setIsScroll 
+}) {
 
   const handleClickButtonClose = () => {
     setIsOpenPage(false);

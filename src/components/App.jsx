@@ -6,12 +6,20 @@ import Items from './Items/Items';
 
 function App() {
 
+  /* Стейты страницы и массива */
   const [currentPage, setCurrentPage] = useState(1);
   const [beerArray, setBeerArray] = useState([]);
 
+  /* Стейт инпута */
   const [inputValue, setIsInputValue] = useState('')
 
+  /* Стейт пагинации */
   const [paginationActive, setPaginationActive] = useState(true);
+
+  /* Стейт скролла */
+  const [isScroll, setIsScroll] = useState(false);
+
+  /* Стейт страницы "not found" */
   const [beerNotFound, setBeerNotFound] = useState(false);
 
   useEffect(() => {
@@ -24,9 +32,16 @@ function App() {
   }, [currentPage]);
 
   useEffect(() => {
+    isScroll ? 
+      document.body.style.overflow = 'hidden' :
+      document.body.style.overflow = 'visible';
+  }, [isScroll]);
+
+  useEffect(() => {
     beerArray.length === 0 ? setBeerNotFound(true) : setBeerNotFound(false)
   }, [beerArray]);
 
+  /* Поиск карточек */
   const handleSearch = (e) => {
     inputValue ?
     api
@@ -45,7 +60,6 @@ function App() {
   return (
     <div className="app">
       <Input
-        inputValue={inputValue}
         setIsInputValue={setIsInputValue}
         handleSearch={handleSearch}
       />
@@ -55,6 +69,7 @@ function App() {
         setCurrentPage={setCurrentPage}
         paginationActive={paginationActive}
         beerNotFound={beerNotFound}
+        setIsScroll={setIsScroll}
       />
     </div>
   );

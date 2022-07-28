@@ -1,17 +1,11 @@
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
 import './Card.scss';
 import Page from './Page/Page';
 
-function Card({ card }) {
+function Card({ card, setIsScroll }) {
 
+  /* Стейт страницы конкретного пива */
   const [isOpenPage, setIsOpenPage] = useState(false);
-  const [isScroll, setIsScroll] = useState(false);
-
-  useEffect(() => {
-    isScroll ? 
-      document.body.style.overflow = 'hidden' :
-      document.body.style.overflow = 'visible';
-  }, [isScroll]);
 
   const handleClickCard = () => {
     setIsOpenPage(true);
