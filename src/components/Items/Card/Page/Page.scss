@@ -1,6 +1,7 @@
 .page {
   display: none;
-  position: absolute;
+  position: fixed;
+  padding-top: 50px;
   top: 0;
   left: 0;
   width: 100%;
@@ -8,6 +9,42 @@
   background-color: #fff;
 
   &_open {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__button-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: inherit;
+    background-image: url('../../../../images/arrow.png');
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  &__img {
+    width: 10%;
+    height: 40%;
     display: block;
+    margin: 0 auto;
+  }
+  
+  &__abv {
+    margin-top: 30px;
+  }
+  
+  &__pairing {
+    max-width: 80%;
+  }
+  
+  &__text {
+    margin: 0 auto;
+    max-width: 80%;
   }
 }
