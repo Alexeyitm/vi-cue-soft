@@ -54,7 +54,10 @@ function App() {
       .getBeer(1)
       .then(res => setBeerArray(res))
       .catch((e) => console.log(e))
-      .finally(() => setPaginationActive(true))
+      .finally(() => {
+        setPaginationActive(true);
+        setCurrentPage(1);
+      })
   }
 
   return (
