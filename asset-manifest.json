@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/vi-cue-soft/static/css/main.f18d0583.css",
-    "main.js": "/vi-cue-soft/static/js/main.0bccbc2b.js",
+    "main.css": "/vi-cue-soft/static/css/main.dd30bf12.css",
+    "main.js": "/vi-cue-soft/static/js/main.b8955172.js",
+    "static/media/search.svg": "/vi-cue-soft/static/media/search.7d283755e0e55ffd5128.svg",
     "index.html": "/vi-cue-soft/index.html",
-    "main.f18d0583.css.map": "/vi-cue-soft/static/css/main.f18d0583.css.map",
-    "main.0bccbc2b.js.map": "/vi-cue-soft/static/js/main.0bccbc2b.js.map"
+    "main.dd30bf12.css.map": "/vi-cue-soft/static/css/main.dd30bf12.css.map",
+    "main.b8955172.js.map": "/vi-cue-soft/static/js/main.b8955172.js.map"
   },
   "entrypoints": [
-    "static/css/main.f18d0583.css",
-    "static/js/main.0bccbc2b.js"
+    "static/css/main.dd30bf12.css",
+    "static/js/main.b8955172.js"
   ]
 }
