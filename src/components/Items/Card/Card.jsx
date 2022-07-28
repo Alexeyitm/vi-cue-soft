@@ -28,7 +28,12 @@ function Card({ card }) {
         <img className="card__img" src={card.image_url} alt={card.name}/>
       </article>
 
-      <Page isOpenPage={isOpenPage}/>
+      <Page
+        card={card}
+        isOpenPage={isOpenPage}
+        setIsOpenPage={setIsOpenPage}
+        setIsScroll={setIsScroll}
+      />
     </>
 
   );

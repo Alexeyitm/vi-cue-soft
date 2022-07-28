@@ -11,7 +11,7 @@ class Api {
     }
   }
 
-  //получаем массив
+  // Получаем массив карточек пива
   getBeer(page) {
     return fetch(`${this._baseUrl}/beers?page=${page}&per_page=20`, {
       method: 'GET',
@@ -19,7 +19,7 @@ class Api {
     .then(res => this._getJSON(res))
   }
   
-  //получаем случайное пиво
+  // Получаем случайную карточку пива
   getRandomBeer() {
     return fetch(`${this._baseUrl}/beers/random`, {
       method: 'GET',
@@ -27,68 +27,12 @@ class Api {
     .then(res => this._getJSON(res))
   }
   
-  //устанавливаем имя и описание
-  setUser(user) {
-    return fetch(`${this._baseUrl}/users/me`, {
-      method: 'PATCH',
-      headers: this._headers,
-      body: JSON.stringify({
-        name: user.name,
-        about: user.about
-      })
+  // Получаем карточки пива по названию
+  getBeerByName(name) {
+    return fetch(`${this._baseUrl}/beers?beer_name=${name}`, {
+      method: 'GET',
     })
     .then(res => this._getJSON(res))
-  }
-
-  //устанавливаем новую карточку
-  setCard(card) {
-    return fetch(`${this._baseUrl}/cards`, {
-      method: 'POST',
-      headers: this._headers,
-      body: JSON.stringify({
-        name: card.place,
-        link: card.link,
-      })
-    })
-    .then(res => this._getJSON(res))
-  }
-
-  //удаляем карточку
-  deleteCard(id) {
-    return fetch(`${this._baseUrl}/cards/${id}`, {
-      method: 'DELETE',
-      headers: this._headers
-    })
-    .then(res => this._getJSON(res))
-  }
-
-  //устанавливаем новый аватар
-  setAvatar(picture) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
-      method: 'PATCH',
-      headers: this._headers,
-      body: JSON.stringify({
-        avatar: picture.link
-      })
-    })
-    .then(res => this._getJSON(res))
-  }
-
-  //переключение лайка
-  toggleLike(id, isLiked) {
-    if (isLiked) {
-      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-        method: 'DELETE',
-        headers: this._headers
-      })
-      .then(res => this._getJSON(res))
-    } else {
-      return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-        method: 'PUT',
-        headers: this._headers
-      })
-      .then(res => this._getJSON(res))
-    }
   }
 }
 
